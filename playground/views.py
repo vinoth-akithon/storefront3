@@ -18,6 +18,7 @@ from django.core.cache import cache
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
 from rest_framework.views import APIView
+from django.conf import settings
 import logging
 
 logger = logging.getLogger(__name__)
@@ -27,11 +28,9 @@ class Index(APIView):
 
     # @method_decorator(cache_page(10*60))
     def get(self, request):
-        logger.debug("API is calling")
-        logger.info("API is calling")
-        logger.warning("API is calling")
-        logger.error("API is calling")
-        logger.critical("API is calling")
+        logger.info(settings.BASE_DIR)
+        logger.info(settings.DEBUG)
+        logger.info(settings.STATIC_ROOT)
         response = requests.get("https://httpbin.org/delay/2")
         data = response.json()
         return render(request, "index.html", context={"result": f"Hello {data}"})
