@@ -3,6 +3,6 @@ from . import views
 
 # url configuration
 urlpatterns = [
-    path("index/", views.index),
+    path("index/", views.Index.as_view()),
     path("hello/", views.say_hello)
 ]
