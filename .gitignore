@@ -1,5 +1,6 @@
 .vscode
 *__pycache__
 media/
-static/
+staticfiles/
 logs/*
+general.log
