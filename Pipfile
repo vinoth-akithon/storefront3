@@ -24,6 +24,7 @@ whitenoise = "*"
 gunicorn = "*"
 dj-database-url = "*"
 psycopg2 = "*"
+django-silk = "*"
 
 [dev-packages]
 pytest = "*"
